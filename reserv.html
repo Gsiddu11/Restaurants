@@ -1,0 +1,85 @@
+v<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Table reservation</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="desing.css">
+
+</head>
+<body>
+
+    <!-- BOOKING FORM -->
+
+    <form id="bookingForm">
+
+        <h2>Reserve Your Table</h2>
+
+        <input type="text" id="name"
+        placeholder="Your Name" required>
+
+        <input type="number" id="tableNumber"
+        placeholder="Table Number" required>
+
+        <input type="number" id="numberOfPeople"
+        placeholder="Number of People" required>       
+
+        <input type="date" id="date" required>
+
+        <input type="time" id="time" required>
+
+        <button type="submit">
+            Book Table
+        </button>
+
+    </form>
+
+    <!-- CONFIRMATION MESSAGE -->
+
+    <p id="confirmationMessage"></p>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+    document.getElementById("bookingForm")
+    .addEventListener("submit", function(event){
+
+        event.preventDefault();
+
+        let name =
+        document.getElementById("name").value;
+
+        let tableNumber =
+        document.getElementById("tableNumber").value;
+
+        let numberOfPeople =
+        document.getElementById("numberOfPeople").value;
+
+        let date =
+        document.getElementById("date").value;
+
+        let time =
+        document.getElementById("time").value;
+
+        let message =
+        "✅ Thank you " + name +
+        "! Your table has been booked for " +
+        date + " at " + time;
+
+        document.getElementById("confirmationMessage")
+        .innerHTML = message;
+
+        document.getElementById("confirmationMessage")
+        .style.display = "block";
+
+        document.getElementById("bookingForm")
+        .reset();
+
+    });
+
+    </script>
+
+</body>
+</html>

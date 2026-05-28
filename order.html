@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online order & payment</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="beut.css">
+
+</head>
+<body>
+
+    <!-- BOOKING FORM -->
+
+    <form id="bookingForm">
+
+        <h2>Online order & payment</h2>
+
+        <input type="text"
+        id="name"
+        placeholder="Your Name"
+        required>
+
+        <input type="email"
+        id="email"
+        placeholder="Enter Your Email"
+        required>
+
+        <input type="tel"
+        id="phone"
+        placeholder="Enter Phone Number"
+        required>
+
+         <input type="address"
+        id="address"
+        placeholder="Enter Your Address"
+        required>
+
+        <select id="payment" required>
+
+            <option value="">
+                Select Payment App
+            </option>
+
+            <option>PhonePe</option>
+
+            <option>Google Pay</option>
+
+            <option>Paytm</option>
+
+        </select>
+
+        <button type="submit">
+            Place Order
+        </button>
+
+    </form>
+
+    <!-- CONFIRMATION MESSAGE -->
+
+    <p id="confirmationMessage"></p>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+    document.getElementById("bookingForm")
+    .addEventListener("submit", function(event){
+
+        event.preventDefault();
+
+        let name =
+        document.getElementById("name").value;
+
+        let email =
+        document.getElementById("email").value;
+
+        let phone =
+        document.getElementById("phone").value;
+
+        let address =
+        document.getElementById("address").value;
+
+        let payment =
+        document.getElementById("payment").value;
+
+        let message =
+        "✅ Thank you " + name +
+        "! Your order has been placed successfully.";
+
+        document.getElementById("confirmationMessage")
+        .innerHTML = message;
+
+        document.getElementById("confirmationMessage")
+        .style.display = "block";
+
+        document.getElementById("bookingForm")
+        .reset();
+
+    });
+
+    </script>
+
+</body>
+</html>
